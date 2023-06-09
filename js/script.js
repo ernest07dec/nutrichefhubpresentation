@@ -178,7 +178,7 @@ async function displayBoosterRecipes() {
     div.classList = "p-4 rounded-lg h-full";
     div.innerHTML = `
     <div
-            class="popular-recipes border border-gray-200 rounded-lg shadow  dark:bg-dmode-lightolive dark:border-gray-700"
+            class="popular-recipes border border-gray-200 rounded-lg shadow dark:bg-dmode-lightolive dark:border-gray-700"
             >
               <a href="recipeDetails.html?id=${recipe.id}">
                 <img

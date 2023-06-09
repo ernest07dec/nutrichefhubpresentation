@@ -1170,6 +1170,11 @@ video {
   color: rgb(222 211 105 / var(--tw-text-opacity));
 }
 
+:is(.dark .dark\:bg-dmode-lightolive) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(222 211 105 / var(--tw-bg-opacity));
+}
+
 .text-dmode-olive {
   --tw-text-opacity: 1;
   color: rgb(25 47 1 / var(--tw-text-opacity));
