@@ -1,13 +1,14 @@
-// const apiKey = "72ca8d2b31ab4f268b31b148230dcd45";
+const apiKey = "72ca8d2b31ab4f268b31b148230dcd45";
 
 // const apiKey = "1dbe0c219f28437fad9363b38a431ecf";
 // const apiKey = "2d682f793790462c80e92e2fa38b984e";
 // const apiKey = "ca2ecbfb42f14697ab37f70271b2a93a";
 // const apiKey = "a17a736ad69d47d88932de3e3fb90afa";
 // used
-const apiKey = "a6dbab0b33d64ed5a5c0e9d881f2581a";
-// const apiKey = "f5062cb49e07461bbc79236e750bf8dc";
-// const apiKey = "2aa73ba9fe6241dda3c67365b5f94ac9";
+// const apiKey = "a6dbab0b33d64ed5a5c0e9d881f2581a";
+// used
+// const apiKey = "f5062cb49e07461bbc79236e750bf8dc"; used
+// const apiKey = "2aa73ba9fe6241dda3c67365b5f94ac9"; used
 // const apiKey = "1618c6d7017049d991435204b135f212"; used
 
 const global = {
@@ -108,7 +109,7 @@ async function displayHealthyRecipes() {
         '<div class="flex flex-row items-center justify-center"><img src="image/price.svg" width="35"  alt="" /><img src="image/price.svg" width="35"  alt="" /><img src="image/price.svg" width="35"  alt="" /></div>';
     }
 
-    div.classList = "p-4 rounded-lg h-full";
+    div.classList = "p-4 rounded-lg";
     div.innerHTML = `
     <div
             class="popular-recipes border border-gray-200 rounded-lg shadow  dark:bg-dmode-lightolive dark:border-gray-700"
@@ -175,10 +176,10 @@ async function displayBoosterRecipes() {
         '<div class="flex flex-row items-center justify-center"><img src="image/price.svg" width="35"  alt="" /><img src="image/price.svg" width="35"  alt="" /><img src="image/price.svg" width="35"  alt="" /></div>';
     }
 
-    div.classList = "p-4 rounded-lg h-full";
+    div.classList = "p-4 rounded-lg";
     div.innerHTML = `
     <div
-            class="popular-recipes border border-gray-200 rounded-lg shadow dark:bg-dmode-lightolive dark:border-gray-700"
+            class="popular-recipes border border-gray-200 rounded-lg shadow  dark:bg-dmode-lightolive dark:border-gray-700"
             >
               <a href="recipeDetails.html?id=${recipe.id}">
                 <img
