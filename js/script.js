@@ -5,9 +5,9 @@
 // const apiKey = "ca2ecbfb42f14697ab37f70271b2a93a";
 // const apiKey = "a17a736ad69d47d88932de3e3fb90afa";
 // used
-// const apiKey = "a6dbab0b33d64ed5a5c0e9d881f2581a";
+const apiKey = "a6dbab0b33d64ed5a5c0e9d881f2581a";
 // const apiKey = "f5062cb49e07461bbc79236e750bf8dc";
-const apiKey = "2aa73ba9fe6241dda3c67365b5f94ac9";
+// const apiKey = "2aa73ba9fe6241dda3c67365b5f94ac9";
 // const apiKey = "1618c6d7017049d991435204b135f212"; used
 
 const global = {
@@ -343,18 +343,18 @@ async function displayRecipeInfo() {
     <div class="container  py-40">
     
       <div
-        class="container gap-8 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1
+        class="container gap-10 md:grid md:grid-flow-col md:grid-cols-2 md:items-center md:justify-center
         relative">
         <img src="${recipe.image}" alt="${
     recipe.title
   }" class="w-full rounded-3xl"/>
         <div class="">
           <h2
-            class="text-6xl pb-6 font-bold text-center border-t-2 pt-4 mb-6 sm:border-none dark:text-dmode-lightolive"
+            class="text-6xl pb-6 font-bold text-center border-t-2 pt-4 mb-6 sm:border-none"
           >
             ${recipe.title}
           </h2>
-          <p class="text-2xl pb-8 font-bold text-center md:text-left md:leading-normal lg:ml-6">
+          <p class="text-2xl pb-8 font-bold text-left ml-6">
             ${recipe.summary}
           </p>
           <div class="flex justify-center items-center gap-10">
@@ -391,12 +391,12 @@ async function displayRecipeInfo() {
         Ingredients
       </h2>
       <div>
-             <div class="container ingredients grid grid-cols-2  lg:grid-cols-5 lg:grid-flow-row text-center gap-2 md:grid-cols-4 sm:grid-cols-2">
+             <div class="container grid grid-cols-5 text-center gap-2">
        ${recipe.extendedIngredients
          .map(
            (
              ingredient
-           ) => `<div class="grid"><img src="https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}" alt="${ingredient.aisle}" class="pb-10" />
+           ) => `<div class="flex flex-col items-center justify-center col-span-1"><img src="https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}" alt="${ingredient.aisle}" class="pb-10" />
        <p class="text-xl font-semibold">${ingredient.original}</p></div>`
          )
          .join(" ")}
@@ -458,10 +458,10 @@ async function displayRecipeInfo() {
       <h2 class="text-4xl font-bold pb-4 mb-4 text-center py-10">Get Enough of These</h2>
       <table class="grid w-full ">
       <thead>
-    <tr class="border-b-4 grid grid-cols-3 text-center">
-      <th ><p class="text-2xl font-bold pb-1 lg:text-3xl">Nutrients</p></th>
-      <th ><p class="text-2xl font-bold pb-1 lg:text-3xl">Amount</p></th>
-      <th ><p class="text-2xl font-bold pb-1 lg:text-3xl">Daily Needs Percentage</p></th>
+    <tr class="mb-10 grid grid-cols-3 text-center">
+      <th ><p class="text-2xl font-bold pb-10 lg:text-5xl ">Nutrients</p></th>
+      <th ><p class="text-2xl font-bold pb-10 lg:text-5xl">Amount</p></th>
+      <th ><p class="text-2xl font-bold pb-10 lg:text-5xl">Daily Needs Percentage</p></th>
     </tr>
   </thead>
   <tbody class="grid gap-3 text-center">
@@ -469,7 +469,7 @@ async function displayRecipeInfo() {
         .slice(9, recipe.nutrition.nutrients.length)
         .map(
           (nutrient) =>
-            `<tr class="border-b-2 grid grid-cols-3">
+            `<tr class="border-b-1 grid grid-cols-3">
       <td ><p class="text-2xl font-semibold">${nutrient.name}</p></td>
       <td><p class="text-2xl font-semibold">${nutrient.amount} ${nutrient.unit}</p></td>
       <td><p class="text-2xl font-semibold">${nutrient.percentOfDailyNeeds} %</p></td>
@@ -479,44 +479,44 @@ async function displayRecipeInfo() {
   </tbody>
 </table>
 </div>
-      <div class="self-baseline">
-      <h2 class="text-4xl font-bold pb-4 mb-4 text-center py-10">Limit These</h2>
-      <table class="grid w-full">
-  <thead>
-    <tr class="border-b-4 grid grid-cols-2 text-center text-2xl lg:text-3xl">
-      <th><p class=" font-bold pb-1 ">Caloric Breakdown</p></th>
-      <th><p class=" font-bold pb-1 ">Amount per Serving</p></th>
-    </tr>
-  </thead>
-  <tbody  class="grid gap-3">
-    <tr class="border-b-2 grid grid-cols-2 text-center">
-      <td><p class="text-2xl font-semibold">Carbohydrates Percentage</p></td>
-      <td><p class="text-2xl font-semibold">${
-        recipe.nutrition.caloricBreakdown.percentCarbs
-      } %</p></td>
-    </tr>
-    <tr class="border-b-2 grid grid-cols-2 text-center">
-      <td ><p class="text-2xl font-semibold">Fats Percentage</p></td>
-      <td ><p class="text-2xl font-semibold">${
-        recipe.nutrition.caloricBreakdown.percentFat
-      } %</p></td>
-    </tr >
-    <tr class="border-b-2 grid grid-cols-2 text-center">
-      <td ><p class="text-2xl font-semibold">Protein Percentage</p></td>
-      <td ><p class="text-2xl font-semibold">${
-        recipe.nutrition.caloricBreakdown.percentProtein
-      } %</p></td>
-    </tr>
-    ${recipe.nutrition.nutrients
-      .slice(0, 8)
-      .map(
-        (nutrient) =>
-          `<tr class="border-b-2 grid grid-cols-2 text-center">
-    <td><p class="text-2xl font-semibold">${nutrient.name}</p></td>
-    <td><p class="text-2xl font-semibold">${nutrient.amount} ${nutrient.unit}</p></td>
-  </tr>`
-      )
-      .join(" ")}      
+<div class="self-baseline">
+<h2 class="text-4xl font-bold pb-4 mb-4 text-center py-10">Limit These</h2>
+<table class="table-auto w-full">
+<thead>
+<tr class="mb-10">
+<th ><p class="text-3xl font-bold pb-10 lg:text-5xl text-left">Caloric Breakdown</p></th>
+<th ><p class="text-3xl font-bold pb-10 lg:text-5xl text-left">Amount per Serving</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b-1">
+<td><p class="text-2xl font-semibold">Carbohydrates Percentage</p></td>
+<td><p class="text-2xl font-semibold">${
+    recipe.nutrition.caloricBreakdown.percentCarbs
+  } %</p></td>
+</tr>
+<tr class="text-2xl font-semibold border-b-1">
+<td><p class="text-2xl font-semibold">Fats Percentage</p></td>
+<td><p class="text-2xl font-semibold">${
+    recipe.nutrition.caloricBreakdown.percentFat
+  } %</p></td>
+</tr >
+<tr class="text-2xl font-semibold border-b-1">
+<td><p class="text-2xl font-semibold">Protein Percentage</p></td>
+<td><p class="text-2xl font-semibold">${
+    recipe.nutrition.caloricBreakdown.percentProtein
+  } %</p></td>
+</tr>
+${recipe.nutrition.nutrients
+  .slice(0, 8)
+  .map(
+    (nutrient) =>
+      `<tr>
+<td><p class="text-2xl font-semibold">${nutrient.name}</p></td>
+<td><p class="text-2xl font-semibold">${nutrient.amount} ${nutrient.unit}</p></td>
+</tr>`
+  )
+  .join(" ")}            
   </tbody>
 </table>
 </div>

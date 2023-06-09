@@ -583,3 +583,12 @@ header .icons #fa-bars {
 footer li {
   border-bottom: 1px, solid, gray;
 }
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+:is(.dark .dark\:bg-dmode-olive) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(222 211 105 / var(--tw-bg-opacity));
+}
